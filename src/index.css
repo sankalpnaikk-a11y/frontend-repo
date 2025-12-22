@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------- BASE BODY -------------------- */
+body {
+  font-family: "Expletus Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background:
+    radial-gradient(circle at top left, rgba(96,165,250,0.04), transparent 55%),
+    radial-gradient(circle at top right, rgba(244,114,182,0.04), transparent 55%),
+    radial-gradient(circle at bottom, rgba(34,197,94,0.03), transparent 60%),
+    #020617;
+  color: #e6eef8;
+
+  /* Fade-in entire website */
+  animation: fadeInBody 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* -------------------- HERO -------------------- */
+.hero-title {
+  font-size: 36px;
+  line-height: 1.03;
+  letter-spacing: 0.6px;
+  background: linear-gradient(90deg, #8b5cf6, #7dd3fc, #34d399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+
+  /* floating animation */
+  animation: floatHero 6s ease-in-out infinite;
+}
+
+@keyframes floatHero {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.hero-sub {
+  color: #9fb0c8;
+  max-width: 720px;
+
+  animation: fadeUp 1.1s ease-out forwards;
+  opacity: 0;
+}
+
+/* -------------------- PILLS -------------------- */
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.02);
+
+  animation: fadeInSlow 1.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* -------------------- BUTTONS -------------------- */
+.btn-main {
+  background: linear-gradient(90deg,#7c3aed,#a78bfa,#34d399);
+  color: #021018;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(99,102,241,0.12);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+
+  animation: fadeUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(99,102,241,0.28);
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+/* -------------------- PANELS -------------------- */
+.panel {
+  background: rgba(15,23,42,0.7);
+  border-radius: 18px;
+  border: 1px solid rgba(66,75,95,0.6);
+  padding: 18px;
+  box-shadow: 0 6px 30px rgba(2,6,23,0.4);
+
+  opacity: 0;
+  animation: fadeSlideIn .8s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+/* -------------------- HOME PREVIEW FRAMES -------------------- */
+.preview-frame {
+  border-radius: 14px;
+  border: 1px solid rgba(74,85,98,0.6);
+  background: rgba(7,11,20,0.75);
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: fadeUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+.preview-frame.highlight {
+  border: 1px solid rgba(16,185,129,0.55);
+}
+
+.preview-inner {
+  width: 80%;
+  height: 86%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(5,9,18,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  animation: fadeInSlow 1.3s ease-out forwards;
+  opacity: 0;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  animation: fadeInImage .9s ease-out forwards;
+  opacity: 0;
+}
+
+/* -------------------- CROPPER -------------------- */
+.cropper-box {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 14px;
+  border: 1px solid rgba(66,75,95,0.6);
+  overflow: hidden;
+  background: #070a11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: fadeSlideIn .9s ease-out forwards;
+  opacity: 0;
+}
+
+.slider-box {
+  margin-top: 12px;
+  background: rgba(8,12,22,0.6);
+  border-radius: 12px;
+  padding: 10px;
+
+  animation: fadeUp .9s ease-out forwards;
+  opacity: 0;
+}
+
+/* -------------------- INPUTS -------------------- */
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(7,9,16,0.7);
+  border: 1px solid rgba(66,75,95,0.6);
+  color: #e6eef8;
+
+  transition: box-shadow .25s ease;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px rgba(167,139,250,0.3);
+}
+
+/* -------------------- RESULT PREVIEW -------------------- */
+.output-box {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 14px;
+  border: 1px solid rgba(66,75,95,0.6);
+  overflow: hidden;
+  background: #070a11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: fadeSlideIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+.output-inner {
+  width: 80%;
+  height: 86%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(5,9,18,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  animation: fadeUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.output-inner-img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+
+  animation: fadeInImage 1s ease-out forwards;
+  opacity: 0;
+}
+
+.output-placeholder {
+  animation: fadeInSlow .8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Checkerboard */
+.output-box.checkerboard {
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.08) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.08) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.08) 75%);
+  background-size: 22px 22px;
+  background-position: 0 0, 0 11px, 11px -11px, -11px 0px;
+
+  animation: fadeInChecker .8s ease-out forwards;
+  opacity: 0;
+}
+
+/* -------------------- KEYFRAMES -------------------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInImage {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInChecker {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Bigger and centered Apply Changes button */
+.apply-btn-big {
+  width: 100%;
+  max-width: 260px;
+  margin: 18px auto 0 auto; /* center horizontally */
+  display: block;
+  padding: 14px 24px !important;
+  font-size: 15px !important;
+  border-radius: 16px !important;
+  text-align: center;
+}
